@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { personal } from "@/data/portfolio";
 
 const links = [
   { label: "About", href: "#about" },
   { label: "Work", href: "#projects" },
   { label: "Skills", href: "#skills" },
+  { label: "Journey", href: "#journey" },
   { label: "Contact", href: "#contact" },
+  { label: "Daily Beats", href: "/journal" },
 ];
 
 export function Navbar() {
@@ -21,8 +24,12 @@ export function Navbar() {
 
   const handleNav = (href: string) => {
     setMenuOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    // If it's a route (starts with /), navigation will be handled by Link component
+    // If it's an anchor, scroll to it
+    if (!href.startsWith("/")) {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -49,13 +56,24 @@ export function Navbar() {
         <ul className="hidden md:flex items-center gap-10">
           {links.map((link) => (
             <li key={link.label}>
-              <button
-                onClick={() => handleNav(link.href)}
-                className="relative group font-body text-sm tracking-wide text-foreground/70 hover:text-foreground transition-colors duration-300"
-              >
-                {link.label}
-                <span className="absolute -bottom-0.5 left-0 w-full h-px bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-              </button>
+              {link.href.startsWith("/") ? (
+                <Link
+                  to={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="relative group font-body text-sm tracking-wide text-foreground/70 hover:text-foreground transition-colors duration-300"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-0.5 left-0 w-full h-px bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                </Link>
+              ) : (
+                <button
+                  onClick={() => handleNav(link.href)}
+                  className="relative group font-body text-sm tracking-wide text-foreground/70 hover:text-foreground transition-colors duration-300"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-0.5 left-0 w-full h-px bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                </button>
+              )}
             </li>
           ))}
         </ul>
@@ -112,12 +130,22 @@ export function Navbar() {
                     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
                   }}
                 >
-                  <button
-                    onClick={() => handleNav(link.href)}
-                    className="font-display text-5xl font-light text-foreground hover:text-primary transition-colors duration-300"
-                  >
-                    {link.label}
-                  </button>
+                  {link.href.startsWith("/") ? (
+                    <Link
+                      to={link.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="font-display text-5xl font-light text-foreground hover:text-primary transition-colors duration-300"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => handleNav(link.href)}
+                      className="font-display text-5xl font-light text-foreground hover:text-primary transition-colors duration-300"
+                    >
+                      {link.label}
+                    </button>
+                  )}
                 </motion.li>
               ))}
             </motion.ul>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -58,6 +58,17 @@
     /* Shadow tokens */
     --shadow-gold: 0 0 40px hsl(36 55% 58% / 0.18);
     --shadow-card: 0 4px 40px hsl(0 0% 0% / 0.6);
+
+    /* Daily Beats & Tales — Stillwater Design System */
+    --paper: 45 15% 90%;
+    --paper-dim: 45 10% 70%;
+    --neon: 72 100% 50%;
+    --neon-glow: 72 100% 50% / 0.12;
+    --stone: 240 2% 31%;
+    --stone-light: 240 2% 40%;
+    --ink: 240 5% 8%;
+    --ink-raised: 240 4% 11%;
+    --ink-surface: 240 3% 14%;
   }
 }
 
@@ -117,6 +128,10 @@
   .font-mono-custom {
     font-family: 'JetBrains Mono', monospace;
   }
+
+  /* Daily Beats typography */
+  .font-garamond { font-family: 'EB Garamond', Georgia, serif; }
+  .font-inter    { font-family: 'Inter', sans-serif; }
 
   .text-stroke {
     -webkit-text-stroke: 1px hsl(var(--foreground));
@@ -214,5 +229,87 @@
   .stat-number {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 600;
+  }
+
+  /* Daily Beats utilities */
+  /* Neon glow utility */
+  .neon-glow {
+    text-shadow: 0 0 20px hsl(var(--neon) / 0.6), 0 0 40px hsl(var(--neon) / 0.3);
+  }
+  .neon-border {
+    box-shadow: 0 0 0 1px hsl(var(--neon) / 0.4), 0 0 20px hsl(var(--neon) / 0.1);
+  }
+
+  /* Stone border utility */
+  .stone-border {
+    border: 1px solid hsl(var(--stone) / 0.4);
+  }
+
+  /* Atmospheric text sizes */
+  .display-xl { font-size: clamp(3.5rem, 10vw, 9rem); line-height: 1; }
+  .display-lg { font-size: clamp(2.5rem, 6vw, 5rem);  line-height: 1.05; }
+  .display-md { font-size: clamp(1.8rem, 4vw, 3rem);  line-height: 1.15; }
+
+  /* Section spacing */
+  .section-pad { padding: 7rem 0; }
+
+  /* Smooth underline link */
+  .story-link {
+    position: relative;
+  }
+  .story-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: hsl(var(--neon));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  .story-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Card hover lift */
+  .card-lift {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px hsl(var(--neon) / 0.06);
+  }
+
+  /* Neon breathing animation */
+  @keyframes neon-breath {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  .animate-neon-breath {
+    animation: neon-breath 3s ease-in-out infinite;
+  }
+
+  /* Timeline pulse animation */
+  @keyframes timeline-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(var(--neon) / 0.7); }
+    50% { box-shadow: 0 0 0 8px hsl(var(--neon) / 0); }
+  }
+
+  .animate-timeline-pulse {
+    animation: timeline-pulse 2s ease-out infinite;
+  }
+
+  /* Cursor pulse for music corner */
+  @keyframes cursor-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(var(--neon) / 0.8); }
+    50% { box-shadow: 0 0 0 12px hsl(var(--neon) / 0); }
+  }
+
+  .animate-cursor-pulse {
+    animation: cursor-pulse 2s ease-out infinite;
   }
 }

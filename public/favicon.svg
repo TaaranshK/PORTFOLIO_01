@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- Background -->
+  <rect width="240" height="240" fill="#0a0a0a"/>
+  
+  <!-- TK Text -->
+  <text x="120" y="155" font-family="Georgia, serif" font-size="120" font-weight="300" font-style="italic" fill="#E8E8E8" text-anchor="middle" letter-spacing="-2">TK</text>
+</svg>

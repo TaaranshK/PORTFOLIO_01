@@ -17,6 +17,8 @@ export default {
         display: ["'Cormorant Garamond'", "serif"],
         body: ["'DM Sans'", "sans-serif"],
         mono: ["'JetBrains Mono'", "monospace"],
+        garamond: ["'EB Garamond'", "Georgia", "serif"],
+        inter: ["'Inter'", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -65,6 +67,16 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        paper: "hsl(var(--paper))",
+        "paper-dim": "hsl(var(--paper-dim))",
+        neon: "hsl(var(--neon))",
+        stone: "hsl(var(--stone))",
+        "stone-light": "hsl(var(--stone-light))",
+        ink: {
+          DEFAULT: "hsl(var(--ink))",
+          raised: "hsl(var(--ink-raised))",
+          surface: "hsl(var(--ink-surface))",
         },
       },
       borderRadius: {

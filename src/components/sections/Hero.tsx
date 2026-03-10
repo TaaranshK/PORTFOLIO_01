@@ -112,6 +112,14 @@ export function Hero() {
           <MagneticButton href={`mailto:${personal.email}`} variant="filled">
             Get In Touch
           </MagneticButton>
+          <MagneticButton 
+            href="https://drive.google.com/file/d/1XeVF-6_JWM1jCbMriH7zVt9ltDwTKxeo/view?usp=sharing" 
+            variant="outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </MagneticButton>
         </motion.div>
       </motion.div>
 

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { personal } from "@/data/portfolio";
 import { fadeUp, slideInLeft, slideInRight, staggerContainer } from "@/lib/animations";
-import taaranshPhoto from "@/assets/taaransh-moody.jpeg";
+import taaranshPhoto from "@/assets/taaransh-1.png";
 
 const stats = [
   { value: "8.5", label: "CGPA" },

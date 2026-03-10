@@ -7,6 +7,7 @@ import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Skills } from "@/components/sections/Skills";
 import { Experience } from "@/components/sections/Experience";
+import { InterviewJourney } from "@/components/sections/InterviewJourney";
 import { Projects } from "@/components/sections/Projects";
 import { Certifications } from "@/components/sections/Certifications";
 import { Contact } from "@/components/sections/Contact";
@@ -39,6 +40,10 @@ export default function Index() {
             <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
             <Experience />
+
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
+            <InterviewJourney />
 
             <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
