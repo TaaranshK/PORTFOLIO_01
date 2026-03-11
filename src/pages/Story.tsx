@@ -1,8 +1,49 @@
 ﻿import { useNavigate, useSearchParams } from "react-router-dom";
-import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef } from "react";
 import CustomCursor from "@/components/journal/CustomCursor";
 import rememberTree from "@/assets/remember-tree.jpg";
+
+/* ── Floating ambient particles ── */
+function FloatingParticles() {
+  const particles = Array.from({ length: 24 }, (_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    size: Math.random() * 2.5 + 1,
+    duration: Math.random() * 12 + 10,
+    delay: Math.random() * 6,
+    opacity: Math.random() * 0.35 + 0.08,
+  }));
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {particles.map((p) => (
+        <motion.div
+          key={p.id}
+          className="absolute rounded-full bg-paper"
+          style={{
+            left: `${p.x}%`,
+            top: `${p.y}%`,
+            width: p.size,
+            height: p.size,
+          }}
+          animate={{
+            y: ["-18px", "18px", "-18px"],
+            x: ["-10px", "10px", "-10px"],
+            opacity: [p.opacity, p.opacity * 2.2, p.opacity],
+          }}
+          transition={{
+            duration: p.duration,
+            delay: p.delay,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
 
 interface StoryPart {
   tag: string;
@@ -12,8 +53,8 @@ interface StoryPart {
   paragraphs: string[];
 }
 
-const STORY_TITLE = "Letters, Light, and Late Nights";
-const STORY_DATE = "2022 - Present";
+const STORY_TITLE = "Between the Silence and the Worlds";
+const STORY_DATE = "2026 - Present";
 
 const PARTS: StoryPart[] = [
   {
@@ -126,11 +167,125 @@ export default function StoryPage() {
     setSearchParams({ page: String(nextPage) });
   };
 
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const scrollToContent = () => {
+    contentRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  /* ── Stagger helpers ── */
+  const titleWords = STORY_TITLE.split(" ");
+
   return (
     <>
       <CustomCursor />
       <div className="min-h-screen bg-ink-raised">
-        <div className="max-w-3xl mx-auto px-6 md:px-12 py-20">
+
+        {/* ═══════ CINEMATIC INTRO · PAGE 1 ONLY ═══════ */}
+        {page === 1 && (
+          <section className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+            {/* atmospheric layers */}
+            <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink-raised to-ink-raised" />
+            <motion.div
+              className="absolute inset-0"
+              style={{ background: "radial-gradient(ellipse at 40% 30%, hsl(36 55% 58% / 0.06), transparent 60%), radial-gradient(ellipse at 70% 70%, hsl(118 22% 32% / 0.05), transparent 55%)" }}
+              animate={{ opacity: [0.6, 1, 0.6] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <FloatingParticles />
+
+            {/* content */}
+            <div className="relative z-10 px-6 max-w-2xl">
+              {/* decorative top rule */}
+              <motion.div
+                className="mx-auto mb-10 h-px bg-gradient-to-r from-transparent via-stone/40 to-transparent"
+                initial={{ width: 0, opacity: 0 }}
+                animate={{ width: "10rem", opacity: 1 }}
+                transition={{ duration: 1.6, delay: 0.4, ease: "easeOut" }}
+              />
+
+              {/* date */}
+              <motion.p
+                className="font-inter text-[11px] tracking-[0.35em] uppercase text-stone mb-6"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                {STORY_DATE}
+              </motion.p>
+
+              {/* title — word stagger */}
+              <h1 className="font-garamond text-4xl sm:text-5xl md:text-6xl leading-[1.2] text-paper mb-6">
+                {titleWords.map((word, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 1.0 + i * 0.14, ease: "easeOut" }}
+                    className="inline-block mr-[0.3em]"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </h1>
+
+              {/* epigraph */}
+              <motion.p
+                className="font-garamond italic text-lg md:text-xl text-paper/50 max-w-md mx-auto mb-10 leading-relaxed"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.4, delay: 2.6 }}
+              >
+                Some chapters are meant to be read slowly.
+              </motion.p>
+
+              {/* decorative bottom rule */}
+              <motion.div
+                className="mx-auto mb-10 h-px bg-gradient-to-r from-transparent via-stone/40 to-transparent"
+                initial={{ width: 0, opacity: 0 }}
+                animate={{ width: "6rem", opacity: 1 }}
+                transition={{ duration: 1.2, delay: 3.0, ease: "easeOut" }}
+              />
+
+              {/* CTA */}
+              <motion.button
+                onClick={scrollToContent}
+                className="font-inter text-xs tracking-[0.25em] uppercase text-stone hover:text-paper transition-colors duration-500"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 3.4 }}
+              >
+                Begin Reading
+              </motion.button>
+
+              {/* scroll chevron */}
+              <motion.div
+                className="mt-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 3.6 }}
+              >
+                <motion.svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  className="mx-auto text-stone/60"
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+                </motion.svg>
+              </motion.div>
+            </div>
+          </section>
+        )}
+
+        {/* ═══════ EXISTING STORY CONTENT ═══════ */}
+        <div ref={contentRef} className="max-w-3xl mx-auto px-6 md:px-12 py-20">
           <motion.button
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -156,9 +311,6 @@ export default function StoryPage() {
             transition={{ duration: 0.8 }}
             className="mb-12"
           >
-            <p className="font-inter text-xs tracking-[0.3em] uppercase text-stone mb-4">
-              {STORY_DATE} - {part.tag} - {part.mood}
-            </p>
             <h1 className="font-garamond display-md text-paper mb-2">{STORY_TITLE}</h1>
             <p className="font-inter text-xs uppercase tracking-[0.22em] text-neon mb-4">
               Page {String(page).padStart(2, "0")} of {String(maxPage).padStart(2, "0")}
