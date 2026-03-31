@@ -9,10 +9,10 @@ export const personal = {
   linkedin: "https://linkedin.com/in/taaransh-kapoor",
   github: "https://github.com/TaaranshK",
   portfolio: "https://kapoortaaransh.vercel.app",
-  bio: "Full Stack Developer with B.Tech in Computer Science. Deep expertise in AI/ML, Data Science, and UI/UX. I build scalable systems and deliver data-driven solutions — with 400+ competitive programming problems demonstrating sharp problem-solving instincts.",
+  bio: "Currently pursuing B.Tech in Computer Science at JECRC University Jaipur, Rajasthan. Deep expertise in AI/ML, Data Science, and UI/UX. I build scalable systems and deliver data-driven solutions — with 400+ competitive programming problems demonstrating sharp problem-solving instincts.",
   education: {
     degree: "B.Tech in Computer Science",
-    institution: "Manipal University Jaipur",
+    institution: "JECRC University Jaipur, Rajasthan",
     cgpa: "8.5",
     year: "2022–2026",
   },

@@ -53,7 +53,7 @@ interface StoryPart {
   paragraphs: string[];
 }
 
-const STORY_TITLE = "Between the Silence and the Worlds";
+const STORY_TITLE = "The Things We Felt But Never Held";
 const STORY_DATE = "2026 - Present";
 
 const PARTS: StoryPart[] = [
@@ -63,10 +63,11 @@ const PARTS: StoryPart[] = [
     title: "Hostel, Panic, and a New Version",
     readTime: "5 min",
     paragraphs: [
-      "In 2022, he joined college and felt alone on a crowded campus. He did not know anyone, and the day his mother helped him settle into the hostel was heavier than expected because it was his first time living away from home.",
-      "The pandemic years had changed him more than he admitted. Class 11 and 12 went online, and somewhere in that phase he became quieter, less social, and unsure whether he could blend in again.",
-      "Gaming became a comfort habit. After classes, he rushed back to his room and played with the same 2-3 friends online. He did start talking to classmates, mostly boys, but still felt awkward around many people.",
-      "At the same time, his CGPA dropped across the first three semesters. In fourth semester, he reset his routine, worked on himself daily, practiced coding seriously, solved DSA regularly, and slowly brought peace back into his days.",
+      "He didn’t notice the loneliness at first. In 2022, when he stepped onto the campus, it looked like everything he had imagined—crowded corridors, unfamiliar faces, voices blending into a constant hum. It should have felt exciting, but instead, it felt like standing in a crowd where no one could truly see him.",
+      "The day his mother helped him settle into the hostel stayed with him longer than expected. She adjusted small things, stretched conversations, delaying the moment she had to leave. And when she finally did, the room didn’t feel new—it felt empty. That was the first night he realized that home isn’t a place, it’s a presence.",
+      "The pandemic years had quietly rewritten him. Online classes had made him quieter, less expressive, unsure if he could blend in again. Conversations no longer came naturally, and he often felt like he was a step behind everyone emotionally.",
+      "Gaming became his comfort. After classes, he rushed back to his room, logging into a world where nothing had changed. There, with his 2–3 friends, he didn’t have to explain himself. In real life, he tried talking to classmates, mostly boys, but there was always a gap he couldn’t cross.",
+      "At the same time, his CGPA started slipping across the first three semesters. By the fourth, it wasn’t just numbers—it reflected something deeper. So he reset. He built discipline, practiced coding daily, solved DSA consistently, and slowly, peace began returning—not loudly, but quietly, like a slow sunrise.",
     ],
   },
   {
@@ -75,9 +76,10 @@ const PARTS: StoryPart[] = [
     title: "Unchained Silence",
     readTime: "5 min",
     paragraphs: [
-      "Around November-December, there were two classmates who usually stayed in their own zone. For almost two years, he never found the right moment to talk properly.",
-      "One day, while coding on his laptop at the back of class, he saw one of them sitting ahead and finally decided to speak. That one decision changed the rhythm of his days.",
-      "He became friends with her, and then with her friend too. Through those conversations, he started understanding perspective better, especially around respect, communication, and emotional safety. He laughed more, went out more, and started opening up again.",
+      "There were two classmates he had noticed for almost two years. They stayed in their own world, not distant, just self-contained. He had never found the right moment to speak.",
+      "Until one day, sitting at the back of the class coding on his laptop, he looked up, saw one of them ahead, and decided not to overthink. He simply spoke. That one small decision changed the rhythm of his days.",
+      "Conversations started small, then grew. He became friends with her, and then with her friend too. Through them, he began understanding perspective—respect, communication, emotional safety.",
+      "He laughed more. Went out more. Opened up again. For the first time in a long while, he wasn’t trying to fit in—he was just being.",
     ],
   },
   {
@@ -86,10 +88,10 @@ const PARTS: StoryPart[] = [
     title: "The Month Time Split",
     readTime: "6 min",
     paragraphs: [
-      "On 26 February, after final exams, he returned home. On the way back to Ajmer, his mother told him his father had severe heart issues and doctors advised immediate surgery.",
-      "The family held onto one sentence, everything will be fine. On 5 March, the surgery went well, and for a brief moment everyone felt life had returned.",
-      "Then on 13 March, everything broke. His father was in the garden, had asked him to read an article, and moments later panic took over. There was shouting, a rushed attempt to drive, a neighbor stepping in, and a race to the hospital.",
-      "After that day, the world felt unnaturally silent. Some memories from that moment still remain too sharp to be put fully into words.",
+      "On 26 February, after exams, he returned home. On the way back to Ajmer, his mother told him about his father’s severe heart condition. Surgery was needed immediately. Fear entered quietly, hidden behind one sentence the family kept repeating—everything will be fine.",
+      "On 5 March, the surgery went well. For a brief moment, it felt like life had returned, like they had won.",
+      "But on 13 March, everything broke. His father was in the garden, asking him to read an article, when suddenly panic took over. Voices rose, movements blurred, and control slipped away. A rushed drive, a neighbor stepping in, a desperate race to the hospital.",
+      "Some moments don’t give you time to understand them. They just happen. And after that day, silence wasn’t peaceful anymore—it was heavy. Some memories stayed too sharp to ever fully put into words.",
     ],
   },
   {
@@ -98,50 +100,50 @@ const PARTS: StoryPart[] = [
     title: "Learning to Feel Again",
     readTime: "6 min",
     paragraphs: [
-      "After some time, he promised himself he would become a better and stronger person. Around that phase, he got a condolence message from her, and that one message brought unexpected relief.",
-      "He returned to college when CRT had started. People showed care, but inside he still felt numb, as if concern was visible around him but unreachable within him.",
-      "Then those two friends asked him to come to Nahargarh. They laughed, clicked pictures, and for a few hours his mind stopped fighting itself.",
-      "After that, he used to pick and drop one of them for college, and those drives became quiet therapy sessions. They spoke about family, fear, future, opinions, and survival in small fragments.",
-      "He later took a short Udaipur trip with his mother to reset. By his birthday, things had softened a little, and a midnight call stayed with him longer than expected.",
+      "After some time, he made a quiet promise to himself—to become stronger, not by choice, but by necessity. Around that phase, a condolence message from her arrived, and somehow, those few words made him feel less alone.",
+      "When he returned to college, life had moved forward. People showed care, but inside, he felt numb—as if concern existed around him, but couldn’t reach within.",
+      "Then one day, those two friends asked him to come to Nahargarh. They laughed, clicked pictures, and for a few hours, his mind stopped fighting itself. It wasn’t happiness—but it was relief.",
+      "Small routines formed. He would pick and drop one of them, and those drives became quiet therapy sessions. Conversations about family, fear, future—spoken in fragments, but enough to feel alive again.",
+      "He later took a short Udaipur trip with his mother, a reset he didn’t know he needed. By his birthday, things had softened slightly, and a midnight call stayed with him longer than expected.",
     ],
   },
-{
-  tag: "The Mistake",
-  mood: "Tender and Uncertain",
-  title: "The Letter",
-  readTime: "4 min",
-  paragraphs: [
-    "A few days later, she asked for help with her laptop. She felt insecure and frightened because it was her first time getting her laptop repaired and she started crying. But he was there for her, and he would be there no matter what.",
-    "He got it repaired. She gave him a chai party. They laughed, giggled, and shared thoughts, and honestly, he felt good.",
-    "By then, he had developed feelings and believed there might be a chance things were mutual. On the last day of the second insem, a random plan was made to watch the re-release of Om Shanti Om, and he chose to confess through a handwritten letter.",
-    "The letter was deeply honest and probably the most beautiful thing he had written. The mistake was not writing it; the mistake was not understanding the time and mental state she was in. That one decision changed the air between them.",
-  ],
-},
-{
-  tag: "The Response",
-  mood: "Quiet and Heavy",
-  title: "The Message That Redefined Everything",
-  readTime: "5 min",
-  paragraphs: [
-    "She replied directly, respectfully, and with clarity. She said it was out of the blue, she felt overwhelmed, and she had only ever seen him as a close friend.",
-    "She appreciated his honesty but could not reciprocate those feelings. She also shared that she was already anxious and not in the headspace for emotionally complex dynamics.",
-    "She said friendship still mattered to her, though things felt awkward. He read that message many times, not to argue with it, but to absorb it with dignity.",
-    "There were private conversations later that remained private. That night, he sat with music and let reality settle.",
-    "But it was not the end. He never wanted to make things awkward; he only wanted to be honest about what he felt in that moment.",
-    "He respected that she opened up and shared her side, and he was genuinely sorry for any hurt or trouble caused.",
-    "He understood her point and respected her space and headspace. She had always been a good friend, and he still valued that friendship.",
-  ],
-},
-
+  {
+    tag: "The Mistake",
+    mood: "Tender and Uncertain",
+    title: "The Letter",
+    readTime: "4 min",
+    paragraphs: [
+      "One day, she asked for help with her laptop. It was her first time dealing with something like that, and she felt anxious enough to cry. He stayed—not to fix her emotions, just the problem. And that was enough.",
+      "He got it repaired. She gave him a chai party. They laughed, shared thoughts, and in that simplicity, he felt something he hadn’t in a long time—peace.",
+      "Somewhere along the way, feelings had grown. Quietly, without forcing themselves. He believed there might be a chance.",
+      "So on the last day of the second insem, after a spontaneous plan to watch Om Shanti Om, he wrote her a handwritten letter—honest, raw, probably the most real thing he had ever written.",
+      "The mistake wasn’t the letter. The mistake was timing. He didn’t understand the weight she was already carrying. And sometimes, even the purest intentions arrive at the wrong moment.",
+    ],
+  },
+  {
+    tag: "The Response",
+    mood: "Quiet and Heavy",
+    title: "The Message That Redefined Everything",
+    readTime: "5 min",
+    paragraphs: [
+      "She replied with clarity and respect. It was unexpected, overwhelming for her, and she had only ever seen him as a close friend.",
+      "She appreciated his honesty but couldn’t reciprocate those feelings. She was already anxious and not in the headspace for something emotionally complex.",
+      "She said the friendship still mattered, even if things felt awkward. He read that message many times—not to question it, but to accept it.",
+      "There were conversations later, quiet and private. That night, he sat with music and let reality settle. It hurt, but it wasn’t bitterness—it was understanding.",
+      "He never wanted to make things awkward. He only wanted to be honest. And she had been honest too.",
+      "He respected her space, her feelings, her clarity. And despite everything, he still valued the friendship deeply.",
+    ],
+  },
   {
     tag: "Open End",
     mood: "Lowkey Hopeful",
     title: "What Remains",
     readTime: "3 min",
     paragraphs: [
-      "Not every story ends cleanly. Some stories stay open and still shape a person for years.",
-      "What remains is not just heartbreak, but perspective: grief, friendship, timing, boundaries, and the weight of words, all learned at once.",
-      "If this feels familiar, it is because many people carry chapters like this quietly, unfinished on paper, but deeply complete in what they teach.",
+      "Not every story ends cleanly. Some stories remain open, yet shape a person in ways nothing else can.",
+      "What remained wasn’t just heartbreak—it was perspective. About grief, timing, boundaries, friendship, and the quiet weight of words.",
+      "Some stories don’t become love stories. They become life lessons.",
+      "And if this feels familiar, it’s because many people carry chapters like this—unfinished on paper, but deeply complete in what they teach.",
     ],
   },
 ];
