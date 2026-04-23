@@ -1,7 +1,39 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { certifications } from "@/data/portfolio";
+import { certifications, type CertificationIcon } from "@/data/portfolio";
 import { fadeUp, staggerContainer } from "@/lib/animations";
+import type { ComponentType } from "react";
+import type { IconProps } from "phosphor-react";
+import {
+  ChartBar,
+  Database,
+  Lightning,
+  Medal,
+  PuzzlePiece,
+  Robot,
+  TerminalWindow,
+} from "phosphor-react";
+
+type IconComponent = ComponentType<IconProps>;
+
+const certificationIcons: Record<CertificationIcon, { Icon: IconComponent; className: string }> = {
+  python: { Icon: TerminalWindow, className: "text-[#3776AB] group-hover:text-primary transition-colors" },
+  database: { Icon: Database, className: "text-foreground/80 group-hover:text-primary transition-colors" },
+  agile: { Icon: Lightning, className: "text-yellow-400 group-hover:text-yellow-300 transition-colors" },
+  analytics: { Icon: ChartBar, className: "text-emerald-400 group-hover:text-emerald-300 transition-colors" },
+  ml: { Icon: Robot, className: "text-sky-400 group-hover:text-sky-300 transition-colors" },
+  dsa: { Icon: PuzzlePiece, className: "text-lime-400 group-hover:text-lime-300 transition-colors" },
+};
+
+function renderCertificationIcon(icon: CertificationIcon) {
+  const iconSpec = certificationIcons[icon] ?? {
+    Icon: Medal,
+    className: "text-muted-foreground",
+  };
+  const Icon = iconSpec.Icon;
+
+  return <Icon size={28} weight="duotone" className={iconSpec.className} aria-hidden="true" />;
+}
 
 const doubled = [...certifications, ...certifications];
 
@@ -58,7 +90,9 @@ export function Certifications() {
                 transition={{ duration: 0.5, delay: (i % certifications.length) * 0.08 }}
                 className="flex items-center gap-4 px-6 py-4 bg-surface-alt border border-border rounded-sm shrink-0 min-w-[260px] hover:border-primary/40 transition-colors duration-300 group"
               >
-                <span className="text-2xl">{cert.icon}</span>
+                <span className="shrink-0">
+                  {renderCertificationIcon(cert.icon)}
+                </span>
                 <div className="flex flex-col">
                   <span className="font-body text-sm text-foreground/80 group-hover:text-foreground transition-colors">
                     {cert.name}
