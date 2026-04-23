@@ -71,7 +71,7 @@ export function Hero() {
             initial={{ clipPath: "inset(0 100% 0 0)" }}
             animate={{ clipPath: "inset(0 0% 0 0)" }}
             transition={{ duration: 1.1, delay: 0.4, ease: [0.76, 0, 0.24, 1] }}
-            className="font-display text-display-xl font-light text-foreground leading-none"
+            className="font-display text-display-md md:text-display-xl font-light text-foreground leading-none break-words"
           >
             {personal.firstName.toUpperCase()}
           </motion.h1>
@@ -81,7 +81,7 @@ export function Hero() {
             initial={{ clipPath: "inset(0 100% 0 0)" }}
             animate={{ clipPath: "inset(0 0% 0 0)" }}
             transition={{ duration: 1.1, delay: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            className="font-display text-display-xl font-light text-stroke leading-none"
+            className="font-display text-display-md md:text-display-xl font-light text-stroke leading-none break-words"
           >
             {personal.lastName.toUpperCase()}
           </motion.h1>

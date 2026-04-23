@@ -217,7 +217,7 @@ export default function StoryPage() {
               </motion.p>
 
               {/* title — word stagger */}
-              <h1 className="font-garamond text-4xl sm:text-5xl md:text-6xl leading-[1.2] text-paper mb-6">
+              <h1 className="font-space-mono text-4xl sm:text-5xl md:text-6xl leading-[1.2] text-paper mb-6">
                 {titleWords.map((word, i) => (
                   <motion.span
                     key={i}
@@ -233,7 +233,7 @@ export default function StoryPage() {
 
               {/* epigraph */}
               <motion.p
-                className="font-garamond italic text-lg md:text-xl text-paper/50 max-w-md mx-auto mb-10 leading-relaxed"
+                className="font-space-mono italic text-lg md:text-xl text-paper/50 max-w-md mx-auto mb-10 leading-relaxed"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.4, delay: 2.6 }}
@@ -313,7 +313,7 @@ export default function StoryPage() {
             transition={{ duration: 0.8 }}
             className="mb-12"
           >
-            <h1 className="font-garamond display-md text-paper mb-2">{STORY_TITLE}</h1>
+            <h1 className="font-space-mono display-md text-paper mb-2">{STORY_TITLE}</h1>
             <p className="font-inter text-xs uppercase tracking-[0.22em] text-neon mb-4">
               Page {String(page).padStart(2, "0")} of {String(maxPage).padStart(2, "0")}
             </p>
@@ -332,7 +332,7 @@ export default function StoryPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 + i * 0.05 }}
-                className="font-garamond text-lg md:text-xl leading-relaxed text-paper/78"
+                className="font-space-mono text-lg md:text-xl leading-relaxed text-paper/78"
               >
                 {paragraph}
               </motion.p>

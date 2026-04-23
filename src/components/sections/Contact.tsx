@@ -81,7 +81,7 @@ export function Contact() {
               hidden: { clipPath: "inset(0 100% 0 0)" },
               visible: { clipPath: "inset(0 0% 0 0)", transition: { duration: 1, ease: [0.76, 0, 0.24, 1] } },
             }}
-            className="font-display text-display-xl font-light text-foreground leading-none"
+            className="font-display text-display-md md:text-display-xl font-light text-foreground leading-none break-words"
           >
             LET'S BUILD
           </motion.h2>
@@ -92,7 +92,7 @@ export function Contact() {
               hidden: { clipPath: "inset(0 100% 0 0)" },
               visible: { clipPath: "inset(0 0% 0 0)", transition: { duration: 1, delay: 0.15, ease: [0.76, 0, 0.24, 1] } },
             }}
-            className="font-display text-display-xl font-light text-stroke-gold leading-none"
+            className="font-display text-display-md md:text-display-xl font-light text-stroke-gold leading-none break-words"
           >
             SOMETHING
           </motion.h2>
@@ -103,7 +103,7 @@ export function Contact() {
               hidden: { clipPath: "inset(0 100% 0 0)" },
               visible: { clipPath: "inset(0 0% 0 0)", transition: { duration: 1, delay: 0.3, ease: [0.76, 0, 0.24, 1] } },
             }}
-            className="font-display text-display-xl font-light text-foreground leading-none"
+            className="font-display text-display-md md:text-display-xl font-light text-foreground leading-none break-words"
           >
             WORTH REMEMBERING.
           </motion.h2>
