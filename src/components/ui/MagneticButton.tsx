@@ -33,8 +33,8 @@ export function MagneticButton({ children, className = "", onClick, href, varian
 
   const baseClass =
     variant === "filled"
-      ? "relative overflow-hidden px-8 py-4 rounded-full font-body text-sm tracking-widest uppercase transition-all duration-400"
-      : "relative overflow-hidden px-8 py-4 rounded-full border font-body text-sm tracking-widest uppercase transition-all duration-400";
+      ? "relative inline-block overflow-hidden px-8 py-4 rounded-full font-body text-sm tracking-widest uppercase transition-all duration-400"
+      : "relative inline-block overflow-hidden px-8 py-4 rounded-full border font-body text-sm tracking-widest uppercase transition-all duration-400";
 
   const Tag = href ? "a" : "button";
 
